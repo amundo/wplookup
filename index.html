@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<title>
+</title>
+
+<script src=js/jquery.js></script>
+<script src=js/underscore.js></script>
+<script src=js/backbone.js></script>
+
+<link rel=stylesheet type=text/css href=css/style.css ></link>
+
+<style>
+body { 
+  background:#fcfcfc;
+}
+input { 
+  font-size: 40px;
+  width: 80%;
+  text-align:center;
+  margin: 0 auto;
+  display:block;
+  border: 1px solid #cecece;
+  padding: 4px;
+  border-radius: 4px;
+  font-family:sans-serif;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+
+  $.get("http://en.wikipedia.org/w/api.php?callback=?", {
+    action: "query",
+    prop: "info|langlinks",
+    lllimit: "200",
+    titles: "Shanghai",
+    redirects: "1",
+    llurl: "1",
+    format: "json"
+  },
+  function(data) {
+    console.log('hi');
+  });
+
+})
+</script>
+</head>
+<body>
+
+<input autofocus />
+
+</body>
+</html>
