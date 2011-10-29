@@ -25,6 +25,8 @@ input {
 #translations { 
   -moz-column-count: 2;
   -moz-column-width: 45%;
+  -webkit-column-count: 2;
+  -webkit-column-width: 45%;
   width: 75%;
   margin: 0 auto;
 }
