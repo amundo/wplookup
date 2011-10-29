@@ -26,3 +26,8 @@ This will download a .zip file to your computer. Unzip that and open up `index.h
 resulting directory in your browser (`File > Open` on Firefox, for instance). Then it should work.
 
 (If you know about `git` then you know how to clone a repo, blah blah.)
+
+THANKS!
+=======
+
+* Stephanie Booth ([climbtothestars.org](http://climbtothestars.org))
