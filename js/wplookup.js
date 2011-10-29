@@ -1,4 +1,5 @@
- $(document).ready(function(){
+$(document).ready(function(){
+console.log(languages);
 
      $('input').keydown(function(ev){
        switch(ev.which){
@@ -21,11 +22,12 @@
     function(data) {
       $('ul').html('');
       _.each(data.query.pages, function(i,pageid){
-        _.each(data.query.pages[pageid].langlinks, function(ll){
-          ll['term'] = ll['*'];
-          delete ll['*']; // wtf key name, mr wikipedia api!
+        _.each(data.query.pages[pageid].langlinks, function(lglink){
+          lglink['term'] = lglink['*'];
+          lglink['endonym'] = languages['wp_codes'][lglink['lang']];
+          delete lglink['*']; // wtf key name, mr wikipedia api!
           var translationTemplate = $('#translationTemplate').html();
-          $('ul').append(_.template(translationTemplate, ll));
+          $('ul').append(_.template(translationTemplate, lglink));
         })
       })
     });
