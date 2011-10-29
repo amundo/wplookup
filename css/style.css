@@ -1,0 +1,36 @@
+body {
+  background:#fcfcfc;
+}
+input {
+  font-size: 40px;
+  width: 80%;
+  text-align:center;
+  margin: 0 auto;
+  display:block;
+  border: 1px solid #cecece;
+  padding: 4px;
+  border-radius: 4px;
+  font-family:sans-serif;
+}
+
+.lang { 
+  font-size: small; 
+  display: inline-block; 
+  width: 5em; 
+  text-align: right; 
+  font-family: monospace; 
+  color: gray; 
+}
+
+#translations { 
+  -moz-column-count: 2;
+  -moz-column-width: 45%;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#translations li { 
+  text-align: left;
+  list-style-type: none;
+  font-size: large; 
+}

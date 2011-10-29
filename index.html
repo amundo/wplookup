@@ -3,88 +3,16 @@
 <head>
 <title>wikipedia interlanguage link tool</title>
 
-<style>
- 
-body {
-  background:#fcfcfc;
-}
-input {
-  font-size: 40px;
-  width: 80%;
-  text-align:center;
-  margin: 0 auto;
-  display:block;
-  border: 1px solid #cecece;
-  padding: 4px;
-  border-radius: 4px;
-  font-family:sans-serif;
-}
-</style>
+<link rel=stylesheet media=screen  href=css/style.css > </style>
+
 <script src=js/jquery.js> </script>
 <script src=js/underscore.js> </script>
-<script>
- $(document).ready(function(){
+<script src=js/wplookup.js> </script>
 
-     $('input').keydown(function(ev){
-       switch(ev.which){
-         case 13:
-           var query = $('input').val();
-           getTranslations(query);
-       };
-     });
-     
-  function getTranslations(query){
-    $.getJSON("http://en.wikipedia.org/w/api.php?callback=?", {
-      action: "query",
-      prop: "info|langlinks",
-      lllimit: "200",
-      titles: query,
-      redirects: "1",
-      llurl: "1",
-      format: "json"
-    },
-    function(data) {
-      $('ul').html('');
-      _.each(data.query.pages, function(i,pageid){
-        _.each(data.query.pages[pageid].langlinks, function(ll){
-          ll['term'] = ll['*'];
-          delete ll['*']; // wtf key name, mr wikipedia api!
-          var translationTemplate = $('#translationTemplate').html();
-          $('ul').append(_.template(translationTemplate, ll));
-        })
-      })
-    });
-  }
-
-}) 
-
-</script>
 <script type=text/html id=translationTemplate>
 <li><span class=lang><%= lang %></span>  <%= term %></li>
 </script>
-<style>
-.lang { 
-  font-size: small; 
-  display: inline-block; 
-  width: 5em; 
-  text-align: right; 
-  font-family: monospace; 
-  color: gray; 
-}
 
-#translations { 
-  -moz-column-count: 2;
-  -moz-column-width: 45%;
-  width: 75%;
-  margin: 0 auto;
-}
-
-#translations li { 
-  text-align: left;
-  list-style-type: none;
-  font-size: large; 
-}
-</style>
 </head>
 <body>
 <input autofocus value=Lemon />
