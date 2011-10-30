@@ -29,6 +29,7 @@ input {
 table#translations { 
   font-family: sans-serif;
   border: 1px solid gray;
+  background: #333;
   -moz-border-radius: 10px; 
   -webkit-border-radius: 10px; 
   margin: 2em auto;
@@ -39,6 +40,7 @@ table#translations {
 table#translations thead { 
   font-weight: bold;
   color: #efefef;
+  background: #333;
 }
 
 tbody tr:nth-child(2n+1) {
@@ -61,6 +63,7 @@ td.wp_code {
 td.endonym { 
   width: 5em;
   font-size: small;
+  padding-left: .5em;
 }
 
 
@@ -87,3 +90,6 @@ td.term a  {
   text-decoration:none;
 }
 
+.fave:before { 
+  content: '★ '; 
+}

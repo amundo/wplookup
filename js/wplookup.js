@@ -1,14 +1,13 @@
 $(document).ready(function(){
-console.log(languages);
 
-     $('input').keydown(function(ev){
-       switch(ev.which){
-         case 13:
-           var query = $('input').val();
-           getTranslations(query);
-       };
-     });
-     
+  $('input').keydown(function(ev){
+    switch(ev.which){
+      case 13:
+        var query = $('input').val();
+        getTranslations(query);
+    };
+  });
+  
   function getTranslations(query){
     $.getJSON("http://en.wikipedia.org/w/api.php?callback=?", {
       action: "query",
@@ -34,6 +33,20 @@ console.log(languages);
       })
     });
   }
+
+  $('th.wp_code button').toggle( 
+    function(){
+      $('tbody tr').hide(); 
+      $('tbody tr td.fave').parent().show();
+      $('.fave').each(function(i,e){console.log($(e).html())});
+    }, function(){
+      $('tbody tr').show(); 
+    }
+  );
+
+  $('table#translations').delegate('td.wp_code', 'click', function(){
+    $(this).toggleClass('fave');
+  });
 
 }) 
 
