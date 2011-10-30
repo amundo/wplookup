@@ -20,14 +20,16 @@ console.log(languages);
       format: "json"
     },
     function(data) {
-      $('ul').html('');
+      $('#translations tbody').html('');
       _.each(data.query.pages, function(i,pageid){
         _.each(data.query.pages[pageid].langlinks, function(lglink){
           lglink['term'] = lglink['*'];
           lglink['endonym'] = languages['wp_codes'][lglink['lang']];
+          lglink['wp_code'] = lglink['lang'];
           delete lglink['*']; // wtf key name, mr wikipedia api!
-          var translationTemplate = $('#translationTemplate').html();
-          $('ul').append(_.template(translationTemplate, lglink));
+          var rowTemplate = $('#rowTemplate').html();
+          //$('ul').append(_.template(translationTemplate, lglink));
+          $('table#translations tbody').append(_.template(rowTemplate, lglink));
         })
       })
     });

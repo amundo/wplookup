@@ -3,6 +3,7 @@
 <head>
 <title>Wikipedia Translation Doohickey</title>
 
+<meta charset=utf-8></meta>
 <link rel=stylesheet media=screen  href=css/style.css > </style>
 
 <script src=js/jquery.js> </script>
@@ -14,10 +15,31 @@
 <li><span class=lang alt="<%= endonym %>" ><%= lang %></span>  <a href="http://<%= lang %>.wikipedia.org/wiki/<%= term %>"><%= term %></a></li>
 </script>
 
+<script type=text/html id=rowTemplate>
+<tr>
+  <td class=wp_code><%= wp_code %></td>
+  <td class=endonym><%= endonym %></td>
+  <td class=term><a href="http://<%= lang %>.wikipedia.org/wiki/<%= term %>"><%= term %></a></td>
+</tr>
+</script>
+
 </head>
 <body>
 <input placeholder="Type an English Wikipedia article title and press enter." />
 <ul id=translations>
 </ul>
+
+<table id=translations>
+<thead>
+<tr>
+  <th class=wp_code><button>★</button></td>
+  <th class=endonym>Language</td>
+  <th class=term>Translation</td>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
 </body>
 </html>

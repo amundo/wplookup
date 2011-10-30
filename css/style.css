@@ -1,6 +1,7 @@
 body {
   background:#fcfcfc;
 }
+
 input {
   font-size: 40px;
   width: 80%;
@@ -14,12 +15,6 @@ input {
 }
 
 .lang { 
-  font-size: small; 
-  display: inline-block; 
-  width: 5em; 
-  text-align: right; 
-  font-family: monospace; 
-  color: gray; 
 }
 
 #translations { 
@@ -31,17 +26,64 @@ input {
   margin: 0 auto;
 }
 
-#translations li { 
+table#translations { 
+  font-family: sans-serif;
+  border: 1px solid gray;
+  -moz-border-radius: 10px; 
+  -webkit-border-radius: 10px; 
+  margin: 2em auto;
+  padding: 0;
+  background black;
+}
+
+table#translations thead { 
+  font-weight: bold;
+  color: #efefef;
+}
+
+tbody tr:nth-child(2n+1) {
+  background: #e3e3e3;
+}
+
+tr:nth-child(2n) {
+  background: #efefef;
+}
+
+td.wp_code { 
+  width: 5em;
+  text-align: right;
+  padding-right: 1em;
+  font-size: small; 
+  font-family: monospace; 
+  color: gray; 
+}
+
+td.endonym { 
+  width: 5em;
+  font-size: small;
+}
+
+
+td.term { 
+  text-align: left; 
+  font-size: large; 
+  font-weight: bold; 
+}
+
+td.term a:hover  { 
   text-align: left;
   list-style-type: none;
   font-size: large; 
+  background: yellow; 
 }
 
-#translations li a { 
+td.term a  { 
+  display:block;
+  padding-top: .5em ;
+  padding-bottom: .5em ;
+  padding-left: .5em ;
+  padding-right: 0;
   color:black;
   text-decoration:none;
 }
 
-#translations li a:hover { 
-  text-decoration:underline;
-}
