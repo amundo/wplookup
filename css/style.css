@@ -51,8 +51,26 @@ tr:nth-child(2n) {
   background: #efefef;
 }
 
+td.wp_code, th.wp_code { 
+  width: 8em;
+}
+
+td.wp_code:hover, th.wp_code:hover { 
+  cursor: pointer;
+}
+
+td.endonym, th.endonym { 
+  width: 12em;
+  text-align: left;
+}
+
+td.term, th.term { 
+  width: auto;
+  text-align: left;
+}
+
+
 td.wp_code { 
-  width: 5em;
   text-align: right;
   padding-right: 1em;
   font-size: small; 
@@ -61,7 +79,6 @@ td.wp_code {
 }
 
 td.endonym { 
-  width: 5em;
   font-size: small;
   padding-left: .5em;
 }

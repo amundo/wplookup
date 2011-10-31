@@ -7,7 +7,7 @@ $(document).ready(function(){
         getTranslations(query);
     };
   });
-  
+
   function getTranslations(query){
     $.getJSON("http://en.wikipedia.org/w/api.php?callback=?", {
       action: "query",
@@ -38,7 +38,8 @@ $(document).ready(function(){
     function(){
       $('tbody tr').hide(); 
       $('tbody tr td.fave').parent().show();
-      $('.fave').each(function(i,e){console.log($(e).html())});
+      $('.fave').each(function(i,e){
+      });
     }, function(){
       $('tbody tr').show(); 
     }
@@ -46,7 +47,27 @@ $(document).ready(function(){
 
   $('table#translations').delegate('td.wp_code', 'click', function(){
     $(this).toggleClass('fave');
+    persistFaves();
   });
+
+  function stringifyFaveCodes(){
+    var faveCodes = [];
+    $('.fave').each(function(i,fave){
+      faveCodes.push($.trim($(fave).html()));
+    })
+    return faveCodes.join(',');
+  };
+
+  function persistFaves(){
+   var faveCodeString = stringifyFaveCodes();
+   $.cookie('wplookup_faves', faveCodeString, { expires: 1000 });
+  };
+
+  function reloadFaves(){
+   // when the app is reloaded, lookup faves and set classes
+   var faveCodeString = $.cookie('wplookup_faves');
+   var codes = faveCodeString.split(',');
+  };
 
 }) 
 

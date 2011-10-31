@@ -13,7 +13,12 @@
 <script src=js/wplookup.js> </script>
 
 <script type=text/html id=translationTemplate>
-<li><span class=lang alt="<%= endonym %>" ><%= lang %></span>  <a href="http://<%= lang %>.wikipedia.org/wiki/<%= term %>"><%= term %></a></li>
+<li>
+  <span class=lang alt="<%= endonym %>" >
+    <%= lang %>
+  </span>  
+  <a href="http://<%= lang %>.wikipedia.org/wiki/<%= term %>"><%= term %></a>
+</li>
 </script>
 
 <script type=text/html id=rowTemplate>
