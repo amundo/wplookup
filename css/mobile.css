@@ -1,0 +1,47 @@
+html, body {
+    font: 20px/25px sans-serif;
+    background: green;
+    padding: 3px;
+    color: green;
+    margin: 0;
+}
+
+input { 
+    font: 20px/25px sans-serif;
+  text-align:left;
+}
+
+table#translations { 
+  font-family: sans-serif;
+  padding: 0;
+  background black;
+}
+
+td, th, table, input { 
+  width: auto;
+  margin: 0 auto;
+}
+thead { 
+  display: none;
+}
+
+td { 
+  display: block;
+}
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+  }
+  a:link, a:visited {
+    text-decoration: underline;
+    color: #0000CC;
+  }
+  a:hover, a:active {
+    text-decoration: underline;
+    color: #660066;
+  }
+
+  html {
+    -webkit-text-size-adjust: none;
+  }
+
+
