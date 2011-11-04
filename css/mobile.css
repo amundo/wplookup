@@ -1,13 +1,12 @@
 html, body {
     font: 20px/25px sans-serif;
-    background: green;
     padding: 3px;
-    color: green;
     margin: 0;
 }
 
 input { 
-    font: 20px/25px sans-serif;
+  font: 20px/25px sans-serif;
+  width: auto;
   text-align:left;
 }
 
@@ -19,6 +18,7 @@ table#translations {
 
 td, th, table, input { 
   width: auto;
+  text-align:left;
   margin: 0 auto;
 }
 thead { 
