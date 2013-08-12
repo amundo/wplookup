@@ -19,7 +19,6 @@ input {
 
 #translations { 
   -moz-column-count: 2;
-  -moz-column-width: 45%;
   -webkit-column-count: 2;
   -webkit-column-width: 45%;
   width: 75%;
@@ -30,11 +29,10 @@ table#translations {
   font-family: sans-serif;
   border: 1px solid gray;
   background: #333;
-  -moz-border-radius: 10px; 
   -webkit-border-radius: 10px; 
   margin: 2em auto;
   padding: 0;
-  background black;
+  background: black;
 }
 
 table#translations thead { 

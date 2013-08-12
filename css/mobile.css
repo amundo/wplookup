@@ -13,7 +13,7 @@ input {
 table#translations { 
   font-family: sans-serif;
   padding: 0;
-  background black;
+  background: black;
 }
 
 td, th, table, input { 
